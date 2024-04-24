@@ -36,4 +36,45 @@ const loginController = async (req, res) => {
   }
 };
 
-module.exports = { registerController, loginController };
+const logoutController = async (req, res) => {
+  try {
+    res
+      .clearCookie("token", { sameSite: true, secure: true })
+      .status(200)
+      .json({ Message: "Logged Out" });
+  } catch (err) {
+    res.status(500).json({ Error: "Internal Server Error" });
+  }
+};
+
+const refetchController = async (req, res) => {
+  try {
+    const token = req.cookies.token;
+    console.log(token);
+    jwt.verify(token, process.env.JWT_SECRET, async (err, data) => {
+      if (err) {
+        console.error(err);
+      }
+      try {
+        const id = data.id;
+        console.log(id);
+        const user = await User.findById(id);
+        if (!user) throw new Error("User Not Found");
+        res.status(200).json(user);
+      } catch (err) {
+        console.error(err);
+        res.status(401).json({ Error: "UnAuthorised User" });
+      }
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ Error: "Internal Server Error" });
+  }
+};
+
+module.exports = {
+  registerController,
+  loginController,
+  logoutController,
+  refetchController,
+};
