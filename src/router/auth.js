@@ -1,0 +1,17 @@
+const express = require("express");
+const router = express.Router();
+
+const {
+  registerController,
+  loginController,
+} = require("../controller/authController");
+
+router.get("/", async (req, res) => {
+  res.status(200).json({ Message: "Router Working" });
+});
+
+router.post("/register", registerController);
+
+router.post("/login", loginController);
+
+module.exports = router;
