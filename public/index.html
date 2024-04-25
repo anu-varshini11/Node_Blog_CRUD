@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Express.js Project</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog Backend</h1>
+        <p>This project demonstrates the functionality of various routes:</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Authentication Routes</h2>
+            <ul>
+                <li><strong>POST /register:</strong> Register a new user.</li>
+                <li><strong>POST /login:</strong> Log in with existing credentials.</li>
+                <li><strong>GET /logout:</strong> Log out the current user.</li>
+                <li><strong>GET /refetch:</strong> Refetch user data.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Blog Routes</h2>
+            <ul>
+                <li><strong>GET /blogs:</strong> Retrieve all blogs.</li>
+                <li><strong>GET /blogs/:id:</strong> Retrieve a specific blog by ID.</li>
+                <li><strong>POST /blogs:</strong> Create a new blog.</li>
+                <li><strong>PUT /blogs/:id:</strong> Update an existing blog by ID.</li>
+                <li><strong>DELETE /blogs/:id:</strong> Delete a blog by ID.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>User Routes</h2>
+            <ul>
+                <li><strong>GET /users:</strong> Retrieve all users.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>For more information, please refer to the project's <a href="https://github.com/AakashSuresh2003/Node_Blog_CRUD">GitHub repository</a>.</p>
+    </footer>
+</body>
+</html>
