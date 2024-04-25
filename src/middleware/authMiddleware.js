@@ -5,11 +5,12 @@ const authMiddleware = async (req, res, next) => {
     const token = req.cookies.token;
     console.log(token);
     if (token) {
-      jwt.verify(token, process.env.JWT_SECRET, (req, decoded) => {
+      jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) {
           res.status(401).json({ Error: "UnAuthorised User" });
         }
         req.user = decoded;
+        console.log(req.user.id);
         next();
       });
     }
