@@ -18,9 +18,10 @@ ConnectDB();
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/blog", blogRouter);
 app.use("/api/v1/user", userRouter);
+app.use(express.static(__dirname+"/public"))
 
 app.get("/", (req, res) => {
-  res.status(200).json({ Message: "Hello World" });
+  res.render("index.html");
 });
 
 app.listen(process.env.PORT, () => {
