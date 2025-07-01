@@ -14,7 +14,7 @@ Before running this application, ensure you have the following installed:
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/AakashSuresh2003/Node_Blog_CRUD.git
+git clone https://github.com/anu-varshini11/Node_Blog_CRUD.git
 ```
 
 2. Navigate into the project directory:
